@@ -1,0 +1,211 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(37, 37, 37);
+  gap: 50px;
+}
+
+.app-keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.keyboard-row {
+  display: flex;
+  gap: 8px;
+}
+
+.keyboard-letter {
+  width: 40px;
+  height: 45px;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 6px;
+  background-color: rgb(129, 129, 129);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.keyboard-letter-big {
+  width: 65px;
+  font-size: 15px;
+}
+
+.app-board {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.app-board-row {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.app-board-cell {
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.5px solid rgb(98, 98, 98);
+  border-radius: 4px;
+  color: white;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.correct {
+  background-color: green;
+  animation-name: animatedAnswer;
+  animation-duration: 0.6s;
+}
+.semi-correct {
+  background-color: rgb(189, 189, 0);
+  animation-name: animatedAnswer;
+  animation-duration: 0.3s;
+}
+.wrong {
+  background-color: rgb(69, 69, 69);
+  animation-name: animatedAnswer;
+  animation-duration: 0.3s;
+}
+
+@keyframes animatedAnswer {
+  from {
+    opacity: 0;
+    transform: scaleY(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+.correct-keyboard {
+  background-color: green;
+  animation-name: animatedAnswer2;
+  animation-duration: 0.6s;
+}
+.semi-correct-keyboard {
+  background-color: rgb(189, 189, 0);
+  animation-name: animatedAnswer2;
+  animation-duration: 0.6s;
+}
+.wrong-keyboard {
+  background-color: rgb(69, 69, 69);
+  animation-name: animatedAnswer2;
+  animation-duration: 0.6s;
+}
+
+@keyframes animatedAnswer2 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-container {
+  display: none;
+  width: 500px;
+  height: 150px;
+  position: fixed;
+  z-index: 10;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  border-radius: 12px;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-text {
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+.modal-text-error {
+  color: rgb(207, 0, 0);
+}
+.modal-text-okay {
+  color: rgb(0, 128, 0);
+}
+
+.modal-btn {
+  border: none;
+  font-family: inherit;
+  background-color: lightgray;
+  padding: 6px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.modal-animation {
+  animation-name: modalAnamtion;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes modalAnamtion {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-bg {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(3px);
+}
+.modal-bg-animation {
+  animation-name: modalAnamtion;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes modalAnamtion {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
